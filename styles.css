@@ -1,0 +1,233 @@
+/* css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Base & Background Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1C1C1E, #2A2A2D);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Texture Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/french-stucco.png');
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Soft radial animated swirl */
+body::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 70%);
+  animation: backgroundMotion 30s infinite linear;
+  z-index: 0;
+}
+
+/* Hero Title Animation */
+.hero {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+.title-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: top left;
+  display: flex;
+  gap: 0.5rem;
+  transition: all 2s ease-in-out;
+  z-index: 3;
+}
+
+.word {
+  font-size: 10vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.word.art {
+  background-image: linear-gradient(120deg, #2F8F61, #44B78B);
+  transform: translateX(-100vw);
+  animation: slideInLeft 1.5s forwards;
+}
+
+.word.life {
+  background-image: linear-gradient(120deg, #DAA520, #FFC72C);
+  transform: translateX(100vw);
+  animation: slideInRight 1.5s forwards;
+}
+
+.shrink .title-container {
+  top: 20px;
+  left: 20px;
+  transform: scale(0.4) translate(0, 0);
+}
+
+/* Menu Bar */
+.menu-bar {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeInNav 1.5s ease 2s forwards;}
+
+.menu-bar.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-row {
+  display: flex;
+  gap: 4rem;
+  flex: 1;
+  justify-content: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 180px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  color: #DAA520;
+}
+
+.menu-row li {
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-row li:hover {
+  color: #44B78B;
+}
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+  fill: #DAA520;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.search-icon:hover {
+  fill: #44B78B;
+}
+
+/* Skyline */
+.skyline-container {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInSkyline 1.5s ease 2s forwards;
+}
+
+.skyline-svg {
+  width: 100%;
+  max-width: none;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+/* Hover Text */
+.hover-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  width: 70%;
+  opacity: 0;
+  z-index: 5;
+}
+
+/* Search Overlay */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+
+.search-box {
+  background: #1e1e1e;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 600px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  to { transform: translateX(0); }
+}
+
+@keyframes backgroundMotion {
+  0%   { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+@keyframes fadeInSkyline {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInNav {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
