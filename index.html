@@ -7,92 +7,32 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Hero Section -->
   <div class="hero" id="hero">
     <div class="title-container">
-      <a href="index.html" class="hero-link">
-        <span class="word art">Art</span>
-        <span class="word life">Life</span>
-      </a>
+      <span class="word art">Art</span>
+      <span class="word life">Life</span>
     </div>
   </div>
 
-  <!-- Navigation -->
+  <div class="skyline-container">
+    <img src="https://raw.githubusercontent.com/BadmonChoge/artlife-assets/5a95263413335234212317edd83c87c261c004bf/svgviewer-output.svg" 
+         alt="Nairobi Skyline" 
+         class="skyline-svg">
+  </div>
+
   <nav class="menu-bar">
     <ul class="menu-row">
-      <li><a href="about.html" data-text="About ArtLife initiative">About Us</a></li>
-      <li><a href="programs.html" data-text="Our programs and exhibitions">What We Do</a></li>
-      <li><a href="support.html" data-text="Support emerging artists">Support</a></li>
-      <li><a href="news.html" data-text="Creative insights and stories">News</a></li>
+      <li data-text="About ArtLife initiative">About Us</li>
+      <li data-text="Our programs and exhibitions">What We Do</li>
+      <li data-text="Support emerging artists">Support</li>
+      <li data-text="Creative insights and stories">Blog</li>
     </ul>
     <svg class="search-icon" id="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
     </svg>
   </nav>
 
-  <!-- Hover Text -->
   <div class="hover-text" id="hover-text"></div>
-
-  <!-- Skyline -->
-  <div class="skyline-container">
-    <img src="https://raw.githubusercontent.com/BadmonChoge/artlife-assets/main/svgviewer-output.svg" 
-         alt="Nairobi Skyline" 
-         class="skyline-svg">
-  </div>
-
-  <!-- Scrollable Content (initially hidden) -->
-  <div class="scroll-content">
-    <main class="content-container">
-      <!-- Your content sections here -->
-      <section class="content-section">
-        <h2>Current Exhibitions</h2>
-        <div class="exhibition-grid">
-          <div class="exhibition-card">
-            <h3>Urban Perspectives</h3>
-            <p>October 15 - November 20</p>
-          </div>
-          <div class="exhibition-card">
-            <h3>Abstract Realms</h3>
-            <p>December 1 - January 15</p>
-          </div>
-        </div>
-      </section>
-      <section class="newsletter">
-        <h2>Join Our Newsletter</h2>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-        <div class="footer-section">
-          <h3>Legal</h3>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2023 ArtLife. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
 
   <script src="main.js" defer></script>
 </body>
